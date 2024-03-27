@@ -1,6 +1,8 @@
+@import url('https://fonts.cdnfonts.com/css/garet');
+
 @font-face {
     font-family: 'lovelo';
-    src: url(../../Lovelo-Black.ttf);
+    src: url(../../assets/Lovelo-Black.ttf);
     font-weight: normal;
 	font-style: normal;
 }
@@ -12,15 +14,42 @@
 body {
     width: 100%;
     height: 100vh;
-}
-
-.container{
+    background: #537b96f1;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 90%;
-    height: 800px;
+    
+}
 
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 546px;
+    width: 1040px;
+
+}
+
+.refer{
+    transform: rotate(-90deg);
+    width: 76px;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+    text-align: center;
+    
+}
+
+.container {
+    width: 1040px;
+    height: 100vh;
+    display: flex;
+    display: flex;
+    align-items: center;
+    height: 542px;
+   
 }
 
 .title {
@@ -28,11 +57,119 @@ body {
     display: flex;
     font-size: 50px;
     font-family: 'lovelo';
-    font-weight: bold;
-    transform: rotate(-90deg);
+    font-weight: 600;
+    
     gap: 40px;
+    color: #ffff;
+    font-size: 60px;
 }
 
 .title span{
     margin: 10px;
 }
+
+.calendario {
+    width: 960px;
+    
+}
+
+table{
+    width: 1040px;
+    border-collapse: separate;
+    border-spacing: 5px 5px;
+    
+}
+
+th {
+    width: 200px;
+    height: 40px;
+    border: 2px solid #ffffff00;
+    background: #ffffff;
+    font-size: 18px;
+    font-family: 'Garet', sans-serif;
+    color: #737373;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 2px;
+    
+}
+
+
+td {
+    background-color: white;
+    height: 78px;
+    padding: 8px;
+    vertical-align: top;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Garet', sans-serif;
+    color: #737373;
+    transition: background-color 0.3s ease;
+}
+
+td:hover{
+    border-top: 3px solid #ff0000;
+    transition: transform 0.5s ease-out;
+    background-color: rgb(219, 219, 219);
+}
+
+  
+
+#select-mes{
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    border: 2px solid #000;
+    margin-left: 4px;
+    width: 147px;
+    cursor: pointer;
+
+
+  }
+  
+  option{
+    color: black;
+    
+  }
+
+  .destacado{
+    color: #1f05b1; 
+    font-weight: bold; 
+    border-top: 3px solid #1f05b1;
+    
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }

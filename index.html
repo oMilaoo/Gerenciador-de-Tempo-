@@ -1,161 +1,83 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="public/css/style.css" />
     <title>Gerenciador de Tempo</title>
-    <link class="icon" rel="stylesheet" href="assets/">
-</head>
-<body>
+    <link class="icon" rel="stylesheet" href="assets/" />
+  </head>
+  <body>
     <section>
-        <div class="container">
-            <div class="title">
-                <div class="ano">
-                    <span>2</span><span>0</span><span>2</span><span>4</span>
-                </div>
-                <div class="mes">
-                    <span>A</span><span>B</span><span>R</span><span>I</span><span>L</span>
-                </div>
-                
+      
+      <div class="container">
+        <div class="refer">
+          <div class="title">
+            <div class="ano"></div>
             </div>
-            <div class="calendario">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Dom</th>
-                            <th>Seg</th>
-                            <th>Ter</th>
-                            <th>Qua</th>
-                            <th>Qui</th>
-                            <th>Sex</th>
-                            <th>Sáb</th>
-                        </tr>
-                        
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td>
-                                <p></p>
-                            </td>
-                            <td>
-                                <p>1</p>
-                            </td>
-                            <td>
-                                <p>2</p>
-                            </td>
-                            <td>
-                                <p>3</p>
-                            </td>
-                            <td>
-                                <p>4</p>
-                            </td>
-                            <td>
-                                <p>5</p>
-                            </td>
-                            <td>
-                                <p>6</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>7</p>
-                            </td>
-                            <td>
-                                <p>8</p>
-                            </td>
-                            <td>
-                                <p>9</p>
-                            </td>
-                            <td>
-                                <p>10</p>
-                            </td>
-                            <td>
-                                <p>11</p>
-                            </td>
-                            <td>
-                                <p>12</p>
-                            </td>
-                            <td>
-                                <p>13</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>14</p>
-                            </td>
-                            <td>
-                                <p>15</p>
-                            </td>
-                            <td>
-                                <p>16</p>
-                            </td>
-                            <td>
-                                <p>17</p>
-                            </td>
-                            <td>
-                                <p>18</p>
-                            </td>
-                            <td>
-                                <p>19</p>
-                            </td>
-                            <td>
-                                <p>20</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>21</p>
-                            </td>
-                            <td>
-                                <p></p>
-                            </td>
-                            <td>
-                                <p></p>
-                            </td>
-                            <td>
-                                <p></p>
-                            </td>
-                            <td>
-                                <p></p>
-                            </td>
-                            <td>
-                                <p></p>
-                            </td>
-                            <td>
-                                <p></p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p></p>
-                            </td>
-                            <td>
-                                <p></p>
-                            </td>
-                            <td>
-                                <p></p>
-                            </td>
-                            <td>
-                                <p></p>
-                            </td>
-                            <td>
-                                <p></p>
-                            </td>
-                            <td>
-                                <p></p>
-                            </td>
-                            <td>
-                                <p></p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+          </div>
         </div>
+
+        <div id="modalAdicionar" class="modal">
+            <div class="modal-content">
+              <span class="close" id="closeAdicionar">&times;</span>
+              <h2>Adicionar Lembrete</h2>
+              <form id="lembrete-form">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" required>
+                <label for="descricao">Descrição:</label>
+                <textarea id="descricao" name="descricao" required></textarea>
+                <button type="submit">Adicionar Lembrete</button>
+              </form>
+            </div>
+          </div>
+          
+          <!-- Modal para visualizar lembrete -->
+          <div id="modalVisualizar" class="modal">
+            <div class="modal-content">
+              <span class="close" id="closeVisualizar">&times;</span>
+              <h2>Lembrete</h2>
+              <div id="lembreteVisualizacao">
+                <!-- As informações do lembrete serão exibidas aqui -->
+              </div>
+            </div>
+          </div>
+
+        <div class="calendario-box">
+          <nav class="mes">
+            <select name="meses" id="select-mes">
+              <option value="0">Janeiro</option>
+              <option value="1">Fevereiro</option>
+              <option value="2">Março</option>
+              <option value="3">Abril</option>
+              <option value="4">Maio</option>
+              <option value="5">Junho</option>
+              <option value="6">Julho</option>
+              <option value="7">Agosto</option>
+              <option value="8">Setembro</option>
+              <option value="9">Outubro</option>
+              <option value="10">Novembro</option>
+              <option value="11">Dezembro</option>
+            </select>
+          </nav>
+
+          <table id="calendario">
+            <thead>
+              <tr class="cabecalho">
+                <th>Dom</th>
+                <th>Seg</th>
+                <th>Ter</th>
+                <th>Qua</th>
+                <th>Qui</th>
+                <th>Sex</th>
+                <th>Sáb</th>
+              </tr>
+            </thead>
+            <tbody id="corpo-tabela"></tbody>
+          </table>
+        </div>
+      </div>
     </section>
-
-
-</body>
+    <script src="./public/script.js"></script>
+  </body>
 </html>
