@@ -10,6 +10,7 @@
   <body>
     <section>
       
+
       <div class="container">
         <div class="refer">
           <div class="title">
@@ -18,34 +19,10 @@
           </div>
         </div>
 
-        <div id="modalAdicionar" class="modal">
-            <div class="modal-content">
-              <span class="close" id="closeAdicionar">&times;</span>
-              <h2>Adicionar Lembrete</h2>
-              <form id="lembrete-form">
-                <label for="titulo">Título:</label>
-                <input type="text" id="titulo" name="titulo" required>
-                <label for="descricao">Descrição:</label>
-                <textarea id="descricao" name="descricao" required></textarea>
-                <button type="submit">Adicionar Lembrete</button>
-              </form>
-            </div>
-          </div>
           
-          <!-- Modal para visualizar lembrete -->
-          <div id="modalVisualizar" class="modal">
-            <div class="modal-content">
-              <span class="close" id="closeVisualizar">&times;</span>
-              <h2>Lembrete</h2>
-              <div id="lembreteVisualizacao">
-                <!-- As informações do lembrete serão exibidas aqui -->
-              </div>
-            </div>
-          </div>
-
         <div class="calendario-box">
-          <nav class="mes">
-            <select name="meses" id="select-mes">
+          <nav class="meses">
+            <select name="meses" id="mes">
               <option value="0">Janeiro</option>
               <option value="1">Fevereiro</option>
               <option value="2">Março</option>
@@ -58,6 +35,7 @@
               <option value="9">Outubro</option>
               <option value="10">Novembro</option>
               <option value="11">Dezembro</option>
+              
             </select>
           </nav>
 
@@ -73,11 +51,50 @@
                 <th>Sáb</th>
               </tr>
             </thead>
-            <tbody id="corpo-tabela"></tbody>
+            <tbody id="body-table"></tbody>
           </table>
         </div>
       </div>
+
+      <!-- MODAL -->
+    
+<div id="modal" class="hide">
+  <div class="content">
+    
+    <h1>Novo Lembrete</h1>
+
+    <form id="lembrete" action="/" method="post">
+      
+
+      <div class="input-wrapper">
+        <label for="image">Início</label>
+        <input type="time" id="appt" name="appt"  />
+      </div>
+
+      <div class="input-wrapper">
+        <label for="image">Término</label>
+        <input type="time" id="appt1" name="appt"   />
+      </div>
+
+      <div class="input-wrapper" id="title-init">
+        <label for="title">Título do Lembrete</label>
+        <input type="text" id="lembrete1" name="title" />
+      </div>
+
+      <div class="input-wrapper">
+        <label for="description">Descrição do Lembrete</label>
+        <textarea name="description" cols="30" rows="10"></textarea>
+      </div>
+
+
+      <a href="#" onclick="onOff()">Voltar</a>
+      <button type="submit">Adicionar</button>
+    </form>
+  </div>
+
+
     </section>
     <script src="./public/script.js"></script>
+    
   </body>
 </html>
