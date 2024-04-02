@@ -92,7 +92,8 @@ function onOff(element) {
             const lembreteHorario = document.getElementById("appt").value;
             const lembreteHorario1 = document.getElementById("appt1").value;
             const lembrete = document.createElement('div');
-            lembrete.textContent = `${lembreteTitulo} - ${lembreteHorario} - ${lembreteHorario1}`;
+            lembrete.textContent = `${lembreteTitulo} ${lembreteHorario} - ${lembreteHorario1}`;
+            lembrete.classList.add('lembrete-roxo');
             lembretes[dia] = { titulo: lembreteTitulo, horario: lembreteHorario, horario1: lembreteHorario1 };
             element.appendChild(lembrete);
             modal.classList.add("hide");
@@ -136,30 +137,3 @@ function mostrarNotificacao(titulo, horario) {
     }
 }
 
-function editarLembrete(dia) {
-  const lembreteDoDia = lembretes[dia];
-  if (lembreteDoDia) {
-      document.getElementById("lembrete1").value = lembreteDoDia.titulo;
-      document.getElementById("appt").value = lembreteDoDia.horario;
-      document.getElementById("appt1").value = lembreteDoDia.horario1;
-
-      // Exibe o botão "Salvar" e esconde o botão "Editar"
-      document.getElementById("salvarBtn").style.display = 'inline';
-      document.getElementById("editarBtn").style.display = 'none';
-
-      // Remove o lembrete do dia atual
-      delete lembretes[dia];
-
-      // Atualiza o calendário
-      criarCalendario(new Date().getMonth(), new Date().getFullYear());
-  }
-}
-
-// Função para excluir lembrete
-function excluirLembrete(dia) {
-  const confirmacao = confirm("Tem certeza que deseja excluir este lembrete?");
-  if (confirmacao) {
-      delete lembretes[dia];
-      criarCalendario(new Date().getMonth(), new Date().getFullYear());
-  }
-}
