@@ -160,34 +160,41 @@ td:hover{
 
 
 #modal {
-    background: linear-gradient(306deg, rgb(16, 2, 37) 0%, rgb(44, 12, 87) 35%, rgb(61, 51, 204) 100%);
+    background-color: rgb(0 0 0 / .5);
     position: absolute;
     top: 10;
     bottom: 10;
     display: flex;
     justify-content: center;
-    transition: 500ms;
-    width: 600px;
-    border-radius: 30px;
-    z-index: 1000;
+    transition: 350ms;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+   
+ 
 }
 
 
 #modal.addScroll {
     overflow: auto;
+    
 }
 
 #modal .content {
-    margin: 32px 0;
+    margin: 60px 0;
+    width: 600px;
     color: white;
     font-family: 'lovelo';
     font-weight: 600;
+    border-radius: 30px;
+    background: linear-gradient(306deg, rgb(16, 2, 37) 0%, rgb(44, 12, 87) 35%, rgb(61, 51, 204) 100%);
 }
 
 #modal .content h1 {
     text-align: center;
     text-transform: uppercase;
     font-size: 40px;
+    margin-top: 30px;
     margin-bottom: 30px;
 }
 
@@ -214,16 +221,7 @@ td:hover{
     font-family: 'lovelo';
 }
 
-#modal-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Cor preta com 50% de transparência */
-    z-index: 999; /* Garante que o overlay esteja acima de outros elementos */
-    display: none; /* Inicia oculto */
-}
+
 
 .content form div:nth-child(3),
 .content form div:nth-child(4),
@@ -231,8 +229,7 @@ td:hover{
     grid-column: span 2;
 }
 
-form input,
-form textarea {
+form input{
     width: 100%;
     padding: 12px;
     border-radius: 6px;
@@ -240,6 +237,19 @@ form textarea {
     outline: none;
     font-size: 16px;
 
+    box-sizing: border-box;
+}
+
+form textarea{
+    width: 100%;
+    height: 160px;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(39, 143, 70, 0.5);
+    outline: none;
+    font-size: 16px;
+    margin-top: 30px;
+    font-family: 'Garet', sans-serif;
     box-sizing: border-box;
 }
 
@@ -336,7 +346,10 @@ a:hover {
 
 .lembrete-roxo {
     color: #6a0dad; /* Cor roxa */
+   
+    font-size: 16px;
     font-weight: 600;
     font-family: 'Garet', sans-serif;
     text-transform: uppercase;
+    text-align: center;
 }

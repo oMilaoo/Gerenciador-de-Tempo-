@@ -83,6 +83,7 @@ function onOff(element) {
             document.getElementById("lembrete1").value = '';
             document.getElementById("appt").value = '';
             document.getElementById("appt1").value = '';
+            document.getElementById("description").value ='';
         }
 
         const form = document.getElementById("lembrete");
@@ -135,5 +136,7 @@ function mostrarNotificacao(titulo, horario) {
             window.focus();
         };
     }
+
+    
 }
 
